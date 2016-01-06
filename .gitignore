@@ -10,8 +10,7 @@
 # http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
-.idea/*
-# bundler state
+/.idea
 /.bundle
 /vendor/bundle/
 /vendor/ruby/
@@ -86,3 +85,4 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+/config/secrets.yml
