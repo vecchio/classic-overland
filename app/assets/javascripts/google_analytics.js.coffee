@@ -1,5 +1,3 @@
-# thanks to Jonathon Wolfe at http://reed.github.io/turbolinks-compatibility/google_analytics.html
-
 class @GoogleAnalytics
 
   @load: ->
@@ -41,4 +39,4 @@ class @GoogleAnalytics
   @analyticsId: ->
     'dfsghdfgsdf'
 
-GoogleAnalytics.load()
+#GoogleAnalytics.load()

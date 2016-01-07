@@ -1,0 +1,38 @@
+/* Add here all your css styles (customizations) */
+
+/*Slides*/
+.rs-caption-4 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 200;
+    padding: 6px 75px;
+    position: relative;
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
+}
+
+
+.footer-v1 .footer .contacts li {
+    margin-bottom: 20px;
+}
+
+.footer-v1 .footer .contacts li i {
+    float: left;
+    width: 30px;
+    height: 30px;
+    /*color: #777;*/
+    /*padding: 8px 5px;*/
+    color: #72c02c;;
+    /*background: #333;*/
+    text-align: center;
+    /*margin: 4px 10px 0 0;*/
+    display: inline-block;
+}
+
+.footer-v1 .footer .contacts li span {
+    color: #ccc;/
+}
+
+.center-image {
+    margin: 0 auto;
+}
