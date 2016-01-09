@@ -1,0 +1,78 @@
+.row.equal-height-columns.margin-bottom-10
+  p = @car.short.present? ? @car.short : 'No short description yet . . .'
+  .col-md-6
+    /! Grey Panel with Equal Height
+    .panel.panel-dark.equal-height-column
+      .panel-heading
+        h3.panel-title
+          i.fa.fa-money
+          =< number_to_currency @car.usa_ask, unit: '$', precision: 0
+      .panel-body
+
+        = link_to @car.sig_pic_url, class: 'fancybox img-hover-v1' do
+          span
+            = image_tag(@car.sig_pic_url, class: 'img-responsive')
+
+  .col-md-6
+    /! Red Panel with Equal Height
+    .panel.panel-dark.equal-height-column
+      .panel-heading
+        h3.panel-title
+          i.fa.fa-tasks
+          | Long Description
+          small= '     Used in detail views'
+      .panel-body
+        h4 Accusamus et iusto odio
+        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+.row.margin-bottom-20
+  .col-md-6
+    /! Blue Panel
+    .panel.panel-dark
+      .panel-heading
+        h3.panel-title
+          i.fa.fa-book
+          | History
+          small= '     Current Status <b>On The Ship</b>'
+      .panel-body
+        /h4
+        /  | Current Status
+        /  b On The Ship
+        p
+          | Reg:
+          b=<> @car.register
+          | VIN:
+          b=<> @car.vin
+          | Engine:
+          b=<> @car.engine
+        p
+          | Bought from
+          b=<> @car.seller
+          | on
+          b=<> @car.bought.strftime('%d %b %Y')
+          | for
+          b=<> number_to_currency @car.price, unit: 'R', precision: 0
+        p
+          | Registered on
+          b=<> @car.enatis.strftime('%d %b %Y')
+          | costing
+          b=<> number_to_currency @car.enatis_cost, unit: 'R', precision: 0
+          | ZA Plate
+          b=<> @car.plate
+        p
+          | Data Dotted on
+          b=<> @car.dot.strftime('%d %b %Y')
+          | SAPD clearance on
+          b=<> @car.police.strftime('%d %b %Y')
+    /! End Blue Panel
+  .col-md-6
+    .panel.panel-dark
+      .panel-heading
+        h3.panel-title
+          i.fa.fa-tasks
+          | Short Description
+          small= '     Used in carousel views'
+      .panel-body
+        h4 Accusamus et iusto odio
+        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+    /! End Turquoise Panel

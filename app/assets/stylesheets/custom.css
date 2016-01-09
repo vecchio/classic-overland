@@ -2,5 +2,15 @@
     padding: 3px;
 }
 
+.footer-v1 a {
+    color: #72c02c;
+    text-decoration: none;
+}
+
+.footer-v1  a:hover, a:focus {
+    color: #72c02c;
+     text-decoration: underline;
+}
+
 /*section.section-who-we-are,*/
 /*section.section-what-we-do { margin-top: 0px}*/

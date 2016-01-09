@@ -12,9 +12,13 @@
 //= require plugins/counter/jquery.counterup.min
 //= require plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min
 //= require plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min
+//= require plugins/owl-carousel/owl-carousel/owl.carousel.min
+
 // JS Customization
 //= require js/custom
+
 // JS Page Level
 //= require js/app
 //= require js/plugins/revolution-slider
+//= require js/plugins/owl-carousel
 

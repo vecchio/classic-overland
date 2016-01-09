@@ -545,9 +545,9 @@
 
 	.header-v6 .navbar-nav > li > a,
 	.header-v6 .navbar-nav > li > a:hover,
-	.header-v6 .navbar-nav > li > a:focus,	
-	.header-v6 .navbar-nav > .active > a, 
-	.header-v6 .navbar-nav > .active > a:hover, 
+	.header-v6 .navbar-nav > li > a:focus,
+	.header-v6 .navbar-nav > .active > a,
+	.header-v6 .navbar-nav > .active > a:hover,
 	.header-v6 .navbar-nav > .active > a:focus {
 		color: #fff;
 		font-weight: 200;

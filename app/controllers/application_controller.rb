@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :latest_vehicles
 
   layout :choose_layout
 
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def latest_vehicles
+    @latest = Car.shipped.limit(3)
+  end
 
   def choose_layout
     current_user.present? ? 'with_user' : 'without_user'

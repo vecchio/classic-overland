@@ -1,5 +1,6 @@
 class Pic < ActiveRecord::Base
-  belongs_to :car
+
+  belongs_to :picable, :polymorphic => true
 
   scope :signature,     -> { where is_signature: 1 }
   scope :not_signature, -> { where is_active: 1, is_signature: 0 }
@@ -23,10 +24,26 @@ class Pic < ActiveRecord::Base
 
   validates_attachment_content_type :photo, content_type: %w(image/jpeg image/pjpeg image/jpg image/png image/gif)
 
-  def set_signature_pic(kar)
-    k = Car.find(kar)
-    if k.pics.signature.count == 0
-      k.pics.not_signature.order(:updated_at).first.update_attribute(:is_signature, 1)
+  def is_type(type)
+    picable_type == type
+  end
+
+  def stage_text
+    if stage == 9
+      'After'
+    elsif stage == 5
+      'While'
+    elsif stage == 1
+      'Before'
+    else
+      'Unknown'
+    end
+  end
+
+  def set_signature_pic
+    # t = picable
+    if picable.pics.signature.count == 0
+      picable.pics.not_signature.order(:updated_at).first.update_attribute(:is_signature, 1)
     end
   end
 

@@ -2,11 +2,11 @@ class CreateCars < ActiveRecord::Migration
   def change
     create_table :cars do |t|
       t.string :no
+      t.integer :stage         # 10=bought 20=refurb 30=waiting to ship 40 on ship 50 arrived 60 cleared 80 advertised 90 sold
       t.string :make
       t.string :model
       t.string :name
       t.string :sell_name
-      t.decimal :sell_price
       t.string :short
       t.string :long
       t.string :year
@@ -22,10 +22,13 @@ class CreateCars < ActiveRecord::Migration
       t.date   :police
       t.string :police_comment
       t.date   :dot
-      t.string :exporter
+      t.date    :exporter
       t.decimal :ship_cost
       t.decimal :refurb_cost
-      t.date   :usa
+      t.date   :usa_arrive
+      t.decimal :usa_ask
+      t.decimal :usa_price
+      t.date :usa_sold
 
       t.timestamps null: false
     end

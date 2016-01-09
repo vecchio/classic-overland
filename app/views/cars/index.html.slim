@@ -1,37 +1,49 @@
+br
+br
+br
+br
+br
+br
 
-.content.container
-  .col-md-12.row
+section.section-who-we-are
+  .parallax-team.parallaxBg
+    .container
+      .row.margin-bottom-10
+        .col-md-12
+          .panel.panel-dark
+            .panel-heading
+              table style='width: 100%;'
+                tr
+                  td
+                    h2.panel-title
+                      i.fa.fa-truck
+                      | Vehicles
+                  td.pull-right
+                    = link_to new_car_path, class: 'btn btn-info' do
+                      i.fa.fa-plus
+                        | New
 
-    .panel.panel-green.margin-bottom-40
-      .panel-heading
-        .panel-title
-            h3
-              i.fa.fa-truck
-              | Vehicles
-            /= link_to 'New Car', new_car_path
-
-      .panel-body
-        /p Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.
-        table.table.table-hover
-          thead.thead-inverse
-            tr
-              th.hidden-sm No
-              th Name
-              th.hidden-sm Model
-              th.hidden-sm Bought
-              th
-          tbody
-            - @cars.each do |car|
-              tr
-                td.hidden-sm = car.no
-                td = car.name
-                td.hidden-sm = car.model
-                td.hidden-sm = car.bought.strftime('%d %b %Y')
-                td
-                  /<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</button>
-                  => link_to car, :class => 'btn btn-warning btn-xs' do
-                    i.fa.fa-eye
-                  => link_to edit_car_path(car), :class => 'btn btn-info btn-xs hidden-sm' do
-                    i.fa.fa-pencil
-                  = link_to car, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-danger btn-xs hidden-sm' do
-                    i.fa.fa-trash-o
+            .panel-body
+              table.table.table-hover
+                thead.thead-inverse
+                  tr
+                    th.hidden-sm No
+                    th Name
+                    th.hidden-sm Model
+                    th.hidden-sm Bought
+                    th
+                tbody
+                  - @cars.each do |car|
+                    tr
+                      td.hidden-sm = car.no
+                      td = car.name
+                      td.hidden-sm = car.model
+                      td.hidden-sm = car.bought.strftime('%d %b %Y')
+                      td
+                        /<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</button>
+                        => link_to car, :class => 'btn btn-warning btn-xs' do
+                          i.fa.fa-eye
+                        => link_to edit_car_path(car), :class => 'btn btn-info btn-xs hidden-sm' do
+                          i.fa.fa-pencil
+                        = link_to car, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-danger btn-xs hidden-sm' do
+                          i.fa.fa-trash-o

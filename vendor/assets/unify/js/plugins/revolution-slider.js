@@ -30,7 +30,7 @@ var RevolutionSlider = function () {
 	                fullWidth:"off",
 	                fullScreen:"on",
 	                hideCaptionAtLimit: "",
-	                dottedOverlay:"twoxtwo",
+	                //dottedOverlay:"twoxtwo",
 	                navigationStyle:"preview4",
 	                fullScreenOffsetContainer: ".header"
 	            });

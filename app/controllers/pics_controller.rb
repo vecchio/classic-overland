@@ -4,15 +4,11 @@ class PicsController < ApplicationController
   def create
     @pic = Pic.new(pic_params)
 
-    respond_to do |format|
-      if @pic.save
-        format.html { redirect_to car_path @pic.car_id, notice: 'pic was successfully created.' }
-        format.json { render :show, status: :created, location: @pic }
-      else
-        format.html { render :new }
-        format.json { render json: @pic.errors, status: :unprocessable_entity }
-      end
+    if @pic.save
+      @pic.set_signature_pic
+      redirect_to car_path(@pic.picable_id, anchor: 'photos'), notice: 'Photo successfully saved.' if @pic.is_type('Car')
     end
+
   end
 
   def update
@@ -21,9 +17,8 @@ class PicsController < ApplicationController
       @pic.update_attribute(:is_signature, 0) if params[:is_signature] == 'false'
 
       if params[:is_signature] == 'true'
-        Pic.signature.where(car_id: @pic.car_id).each do |p|
+        @pic.picable.pics.signature.each do |p|
           p.update_attribute(:is_signature, 0)
-          x = p
         end
         @pic.update_attributes is_signature: 1, is_active: 1
       end
@@ -35,13 +30,10 @@ class PicsController < ApplicationController
       @pic.update_attribute(:is_active, 1) if params[:is_active] == 'true'
     end
 
-    @pic.set_signature_pic(@pic.car_id)
+    @pic.set_signature_pic
 
-    respond_to do |format|
-      if @pic.save
-        format.html { redirect_to car_path @pic.car_id, notice: 'Photo successfully updated.' }
-        format.json { render :show, status: :ok, location: @car }
-      end
+    if @pic.save
+      redirect_to car_path(@pic.picable_id, anchor: 'photos'), notice: 'Photo successfully updated.' if @pic.is_type('Car')
     end
   end
 
@@ -49,11 +41,8 @@ class PicsController < ApplicationController
     @pic.photo = nil
     if @pic.save
       if @pic.destroy
-        @pic.set_signature_pic(@pic.car_id)
-        respond_to do |format|
-          format.html { redirect_to car_path @pic.car_id, notice: 'pic was successfully destroyed.' }
-          format.json { head :no_content }
-        end
+        @pic.set_signature_pic
+        redirect_to car_path(@pic.picable_id, anchor: 'photos'), notice: 'Photo deleted.' if @pic.is_type('Car')
       end
     end
   end
@@ -66,6 +55,6 @@ class PicsController < ApplicationController
 
     # Never trust parameters from the spicy internet, only allow the white list through.
     def pic_params
-      params.require(:pic).permit(:photo,  :name, :caption, :car_id)
+      params.require(:pic).permit(:photo, :name, :caption, :picable_id, :picable_type, :is_landscape, :stage)
     end
 end

@@ -3,30 +3,25 @@
     .container
       .row
         /! About
-        .col-md-3.md-margin-bottom-40.center-image
+        .col-md-3.md-margin-bottom-40
           .headline
             h2 Outfitted For Adventure
           div [style='margin: 5px;']
             = link_to image_tag('classic-overland-no-outfitted.png', style: 'height:120px;'), root_path(anchor: 'home')
-
-          /p About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.
-          /p Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.
-
+        /! End About
+        /! Latest
         .col-md-3.md-margin-bottom-40
           .posts
             .headline
               h2 Latest Vehicles
+              small= ' Date Shipped'
             ul.list-unstyled.latest-list
-              li
-                a href="#"  Cape Buffalo
-                small February, 2016
-              li
-                a href="#"  Tiger Fish
-                small February, 2016
-              li
-                a href="#"  Klipspringer
-                small March, 2016
-
+              - @latest.each do |c|
+                li
+                  = link_to c.sell_name, vehicle_path(c), class: 'xxx'
+                  small= c.exporter.strftime('%B %d, %y')
+        /! End Latest
+        /! Link List
         .col-md-3.md-margin-bottom-40
           .headline
             h2 Useful Links
@@ -46,23 +41,24 @@
             li
               = link_to 'Privacy Policy', privacy_policy_path
               i.fa.fa-angle-right
-
-
+        /! End Link List
+        /! Address
         .col-md-3.map-img.md-margin-bottom-40
           .headline
             h2 Contact Us
 
-          ul.list-unstyled.contacts
-            li
-              i.radius-3x.fa.fa-map-marker.fa-2x
-              span Marjane Dr, Macon, GA 31210
-            li
-              i.radius-3x.fa.fa-phone.fa-2x
-              span +1 404 719 8063
-            li
-              i.radius-3x.fa.fa-envelope.fa-2x
-              = mail_to 'web-enquiry@classicoverland.com', 'Mail Enquiry', subject: 'Website Enquiry'
-              /span web-enquiry@classicoverland.com
+          address.md-margin-bottom-40
+            span
+              i.fa.fa-map-marker.fa-2x
+              =< '   Marjane Dr, Macon GA, 3120'
+            br
+            br
+            i.fa.fa-phone.fa-2x
+            =< '   +1 404 719 8063'
+            br
+            br
+            i.radius-3x.fa.fa-envelope.fa-2x
+            =< mail_to 'web-enquiry@classicoverland.com', 'web-enquiry@classicoverland.com', subject: 'Website Enquiry'
 
   .copyright
     .container
@@ -72,28 +68,3 @@
             = '2015 - Present '
             i.radius-3x.fa.fa-copyright.fa-lg
             = ' All Rights Reserved.'
-
-        /.col-md-6
-          ul.footer-socials.list-inline
-            li
-              a.tooltips data-original-title="Facebook" data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-facebook
-                  | xcvxcvxcv
-            li
-              a.tooltips data-original-title="Skype" data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-skype
-            li
-              a.tooltips data-original-title=("Google Plus") data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-google-plus
-            li
-              a.tooltips data-original-title="Linkedin" data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-linkedin
-            li
-              a.tooltips data-original-title="Pinterest" data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-pinterest
-            li
-              a.tooltips data-original-title="Twitter" data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-twitter
-            li
-              a.tooltips data-original-title="Dribbble" data-placement="top" data-toggle="tooltip" href="#" title=""
-                i.fa.fa-dribbble

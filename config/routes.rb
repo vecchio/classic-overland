@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#index'
 
+  get 'vehicles' => 'cars#vehicles'
+  get 'vehicle' => 'cars#vehicle'
   get 'privacy-policy' => 'pages#privacy_policy'
   get 'terms-of-service' => 'pages#terms_of_service'
 

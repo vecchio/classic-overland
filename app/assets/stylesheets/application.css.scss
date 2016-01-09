@@ -12,7 +12,6 @@
  *
  *= require font-awesome
  *= require index.css.scss
-
  *= require_tree .
  *= require_self
  */
@@ -31,3 +30,4 @@
 .alert-notice {
   @extend .alert-info;
 }
+
