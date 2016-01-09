@@ -6,7 +6,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :model
       t.string :name
       t.string :sell_name
-      t.integer :sell_price
+      t.decimal :sell_price
       t.string :short
       t.string :long
       t.string :year
@@ -14,15 +14,17 @@ class CreateCars < ActiveRecord::Migration
       t.string :vin
       t.string :engine
       t.string :seller
-      t.string :bought
-      t.string :price
-      t.date   :register
-      t.string :register_cost
+      t.date :bought
+      t.decimal :price
+      t.date   :enatis
+      t.decimal :enatis_cost
       t.string :plate
       t.date   :police
       t.string :police_comment
       t.date   :dot
       t.string :exporter
+      t.decimal :ship_cost
+      t.decimal :refurb_cost
       t.date   :usa
 
       t.timestamps null: false

@@ -39,7 +39,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'puma'
-  gem 'byebug'
+  # gem 'byebug'
 end
 
 group :production do

@@ -1,12 +1,37 @@
-= form_for @car do |f|
-  - if @car.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@car.errors.count, "error")} prohibited this car from being saved:"
-      ul
-        - @car.errors.full_messages.each do |message|
-          li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions = f.submit
+.col-md-9
+  = form_for @car, html: { id: 'sky-form', class: 'sky-form' } do |f|
+    header Registration
+    fieldset
+      .row
+        section.col.col-6
+          = f.label :name, class: 'label'
+          = f.label :name, class: 'input'
+            = f.text_field :name, placeholder: 'Our name for it'
+        section.col.col-6
+          = f.label 'Sales Name', class: 'label'
+          = f.label :sell_name, class: 'input'
+            = f.text_field :sell_name, placeholder: 'Sales name for it'
+
+    fieldset
+      section
+        = f.label :short, class: 'input'
+          = f.text_field :short, placeholder: 'Short description'
+      section
+        = f.label :long, class: 'textarea'
+          = f.text_area :long, placeholder: 'Long description'
+
+    fieldset
+      section
+        = f.label 'Photo', class: 'input input-file'
+          .button
+            = f.file_field :photo, onchange: 'this.parentNode.nextSibling.value = this.value'
+            | Browse
+          = text_field_tag '', '', placeholder: 'Include some file', disabled: true
+
+
+
+
+    footer
+      = f.submit 'Save', class: 'btn-u'
+

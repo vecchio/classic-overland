@@ -1,78 +1,80 @@
 == render 'shared/front_page_slider'
 
-.content.container#what-we-do
-  .title-box-v2
-    h2
-      span.color-green What
-      = ' we do'
-  .row
-    .col-md-6
-      p
-        span.dropcap C
-        | lassic Overland’s mission is to enable adventure one customer at a time.  As a company we are passionate about offering a unique product for those who want to stand out from the crowd.
-
-      p
-        span.dropcap O
-        | ur clients are people who do not compromise.  Someone who has an appreciation for the finer things in life and has a clear understanding that life is not a dress rehearsal.  In order to fulfill the desires of these clients Classic Overland combines meticulous restoration and refurbishment of Vintage Defenders with state of the art overland accessories ready for any adventure.
-
-    .col-md-6
-      .container
-        .row.margin-bottom-30
-          .col-sm-3.sm-margin-bottom-30
-            = link_to image_path('what-we-do/stebin.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
-              span
-                = image_tag('what-we-do/stebin-small.jpg', class: 'img-responsive')
-
-          .col-sm-3.sm-margin-bottom-30
-            = link_to image_path('front-page/twee-spoor-pad.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
-              span
-                = image_tag('front-page/twee-spoor-pad.jpg', class: 'img-responsive')
-
-        .row.margin-bottom-30
-          .col-sm-3.sm-margin-bottom-30
-            = link_to image_path('front-page/sand-road.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
-              span
-                = image_tag('front-page/sand-road.jpg', class: 'img-responsive')
-
-          .col-sm-3.sm-margin-bottom-30
-            = link_to image_path('front-page/twee-spoor-pad.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
-              span
-                = image_tag('front-page/twee-spoor-pad.jpg', class: 'img-responsive')
-
-
-/! === Meet Our Team ===
-.parallax-team.parallaxBg#who-we-are
-  .container.content
-    .title-box-v2
+section.section-what-we-do#what-we-do
+  .content.container
+    .title-v1
       h2
-        span.color-green WHO
-        = ' we are'
-
+        span.color-green What
+        = ' we do'
     .row
-      /! Team v2
-      .col-md-4.col-sm-8
-        .team-v2
-          = image_tag('team/stebin.jpg', class: 'img-responsive')
-          .inner-team
-            h3 Stebin Horne
-            small.color-green VP of  . . . .
-            p While living in Africa Stebin Horne fell in love with the Overland Experience.  Traveling in outfitted Safari Vehicles to destinations unknown it was clear that this is what he wanted to be doing the rest of his life.  Marrying into a South African family connected him with his business partner and Swaari (Afrikaans for Brother in law) Gerhard du Toit.  Classic Overland was born out of Gerhard’s vast expertise with overland vehicles, particularly Land Rover Defenders, combined with Stebin’s vision of an International Company that could bring a unique automotive experience to discerning customers.
-            hr
+      .col-md-6
+        p
+          span.dropcap C
+          | lassic Overland’s mission is to enable adventure one customer at a time.  As a company we are passionate about offering a unique product for those who want to stand out from the crowd.
 
-      .col-md-4.col-sm-8
-        .team-v2
-          = image_tag('team/stewart.jpg', class: 'img-responsive img-circle')
-          .inner-team
-            h3 Stewart Vernon
-            small.color-green VP of  . . . .
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...
-            hr
+        p
+          span.dropcap O
+          | ur clients are people who do not compromise.  Someone who has an appreciation for the finer things in life and has a clear understanding that life is not a dress rehearsal.  In order to fulfill the desires of these clients Classic Overland combines meticulous restoration and refurbishment of Vintage Defenders with state of the art overland accessories ready for any adventure.
 
-      .col-md-4.col-sm-8
-        .team-v2
-          = image_tag('team/gerhard.jpg', class: 'img-responsive img-circle')
-          .inner-team
-            h3 Gerhard du Toit
-            small.color-green VP of  . . . .
-            p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...
-            hr
+      .col-md-6
+        .container
+          .row.margin-bottom-30
+            .col-sm-3.sm-margin-bottom-30
+              = link_to image_path('what-we-do/stebin.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
+                span
+                  = image_tag('what-we-do/stebin-small.jpg', class: 'img-responsive')
+
+            .col-sm-3.sm-margin-bottom-30
+              = link_to image_path('front-page/twee-spoor-pad.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
+                span
+                  = image_tag('front-page/twee-spoor-pad.jpg', class: 'img-responsive')
+
+          .row.margin-bottom-30
+            .col-sm-3.sm-margin-bottom-30
+              = link_to image_path('front-page/sand-road.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
+                span
+                  = image_tag('front-page/sand-road.jpg', class: 'img-responsive')
+
+            .col-sm-3.sm-margin-bottom-30
+              = link_to image_path('front-page/twee-spoor-pad.jpg'), class: 'fancybox img-hover-v1', rel: 'gallary2' do
+                span
+                  = image_tag('front-page/twee-spoor-pad.jpg', class: 'img-responsive')
+
+
+
+section.section-who-we-are#who-we-are
+  .parallax-team.parallaxBg
+    .container
+      .title-box-v2
+        h2
+          span.color-green WHO
+          = ' we are'
+
+      .row
+        /! Team v2
+        .col-md-4.col-sm-8
+          .team-v2
+            = image_tag('team/stebin.jpg', class: 'img-responsive')
+            .inner-team
+              h3 Stebin Horne
+              small.color-green VP of  . . . .
+              p While living in Africa Stebin Horne fell in love with the Overland Experience.  Traveling in outfitted Safari Vehicles to destinations unknown it was clear that this is what he wanted to be doing the rest of his life.  Marrying into a South African family connected him with his business partner and Swaari (Afrikaans for Brother in law) Gerhard du Toit.  Classic Overland was born out of Gerhard’s vast expertise with overland vehicles, particularly Land Rover Defenders, combined with Stebin’s vision of an International Company that could bring a unique automotive experience to discerning customers.
+              hr
+
+        .col-md-4.col-sm-8
+          .team-v2
+            = image_tag('team/stewart.jpg', class: 'img-responsive img-circle')
+            .inner-team
+              h3 Stewart Vernon
+              small.color-green VP of  . . . .
+              p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...
+              hr
+
+        .col-md-4.col-sm-8
+          .team-v2
+            = image_tag('team/gerhard.jpg', class: 'img-responsive img-circle')
+            .inner-team
+              h3 Gerhard du Toit
+              small.color-green VP of  . . . .
+              p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...
+              hr

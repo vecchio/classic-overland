@@ -1,3 +1,6 @@
+/public/photos
+/public/system
+/unify
 #----------------------------------------------------------------------------
 # Ignore these files when commiting to a git repository.
 #

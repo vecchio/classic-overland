@@ -51,7 +51,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (8.2.1)
     capistrano (3.0.1)
       i18n
       rake (>= 10.0.0)
@@ -237,7 +236,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootstrap-sass
-  byebug
   capistrano (~> 3.0.1)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)

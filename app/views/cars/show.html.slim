@@ -1,9 +1,70 @@
-p#notice = notice
+br
+br
+br
+br
+br
+br
 
-p
-  strong Name:
-  = @car.name
+.container
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        h3 Photos
+      table.table
+        theader
+          tr
+            th Photo
+            th Name
+            th Caption
+            th File Name
+            th Size
+            th
+        tbody
+          - @car.pics.order('is_signature desc, is_active desc, updated_at').each do |p|
+            tr [class="#{p.is_active? ? '' : 'active'} #{p.is_signature? ? 'info' : ''}" ]
+              td
+                = link_to p.photo.url, class: 'fancybox img-hover-v1', rel: 'gallary1' do
+                  span
+                    = image_tag(p.photo.url(:small), class: 'img-responsive')
+              td= p.name
+              td= p.caption
+              td= p.photo_file_name
+              td= number_to_human_size p.photo_file_size
+              td
+                - if p.is_active?
+                  => link_to pic_path(p, is_active: false), :method => :put, :class => 'btn btn-warning btn-xs hidden-sm', title: 'Set Inactive' do
+                    i.fa.fa-thumbs-o-down
+                - else
+                  => link_to pic_path(p, is_active: true), :method => :put, :class => 'btn btn-info btn-xs hidden-sm', title: 'Set Active'do
+                    i.fa.fa-thumbs-o-up
 
-= link_to 'Edit', edit_car_path(@car)
-'|
-= link_to 'Back', cars_path
+                => link_to p, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => 'btn btn-danger btn-xs hidden-sm', title: 'Delete' do
+                  i.fa.fa-trash-o
+
+                - unless p.is_signature?
+                  => link_to pic_path(p, is_signature: true), :method => :put, :class => 'btn btn-warning btn-xs hidden-sm', title: 'Make Signature' do
+                    i.fa.fa-arrow-up
+
+    .panel.panel-default
+      .panel-heading
+        h3 Add a new photo
+        = form_for @pic, html: {id: 'sky-form', class: 'sky-form'} do |f|
+          fieldset
+            section
+              = f.hidden_field :car_id
+              = f.label :name, class: 'input'
+                = f.text_field :name, placeholder: 'Name of the photo'
+            section
+              = f.label :caption, class: 'input'
+                = f.text_field :caption, placeholder: 'Caption for the photo'
+
+          fieldset
+            section
+              = f.label 'Photo', class: 'input input-file'
+                .button
+                  = f.file_field :photo, onchange: 'this.parentNode.nextSibling.value = this.value'
+                  | Browse
+                = text_field_tag '', '', placeholder: 'Include some file', disabled: true
+
+          footer
+            = f.submit 'Save', class: 'btn-u'

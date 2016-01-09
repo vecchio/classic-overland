@@ -10,6 +10,7 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @pic = @car.pics.new
   end
 
   # GET /cars/new
@@ -69,6 +70,6 @@ class CarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_params
-      params.require(:car).permit(:name)
+      params.require(:car).permit(:photo,  :no, :make, :model, :name, :sell_name, :sell_price, :short, :long, :year, :register, :vin, :engine, :seller, :bought, :price, :register, :register_cost, :plate, :police, :police_comment, :dot, :exporter, :usa)
     end
 end

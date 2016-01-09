@@ -1,35 +1,14 @@
-/.header-v6.header-dark-scroll.header-sticky
-.header-v6.header-classic-white.header-sticky
-  /.navbar.mega-menu role='navigation'
-  .navbar.mega-menu.navbar-fixed-top role="navigation" style='background: rgba(0),0,0,0.4)'
-    .container.container-space
-      /.topbar
-        ul.loginbar.pull-right
-          li.hoverSelector
-            i.fa.fa-globe
-            a Languages
-            ul.languages.hoverSelectorBlock
-              li.active
-                a href="#" English
-              li.active
-                a href="#" English
-              li.active
-                a href="#" English
-                i.fa.fa-check
-          li.topbar-devider
-          li
-            a href="page_faq.html" Help
-          li.topbar-devider
-          li
-            a href="page_faq.html" Login
-
+.header-v6.header-white-transparent.header-sticky
+  .navbar.mega-menu role="navigation" style='background: rgba(0),0,0,0.4)'
+    .container
       .menu-container
         button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button"
           span.sr-only Toggle navigation
-          /span.fa.fa-bars
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
+          span.fa.fa-bars
+          /span.icon-bar
+          /span.icon-bar
+          /span.icon-bar
+
         .navbar-brand
           /div style='background:#ccc'
           = link_to image_tag('classic-overland-logo.png', class: 'shrink-logo'), root_path
@@ -39,7 +18,7 @@
       .collapse.navbar-collapse.navbar-responsive-collapse
         .menu-container
           ul.nav.navbar-nav
-            li.page-scroll.active
+            li.page-scroll.home
               = link_to 'Home', root_path
             li.page-scroll
               = link_to 'Who We Are', root_path(anchor: 'who-we-are')
@@ -56,6 +35,8 @@
                   = link_to 'Pipeline', '#'
                 li
                   = link_to 'Sold', '#'
+                li
+                  = link_to 'All', cars_path
 
 
 
