@@ -28,6 +28,9 @@
               li.dropdown
                 = link_to 'All', cars_path
 
+              li.dropdown
+                = link_to 'Sign Out', destroy_user_session_path, :method => :delete
+
             li.dropdown
               = link_to 'Who We Are', root_path(anchor: 'who-we-are')
 

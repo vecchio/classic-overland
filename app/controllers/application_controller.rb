@@ -19,9 +19,8 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless current_user
-      store_location
       flash[:notice] = 'You must be signed in'
-      redirect_to login_url
+      redirect_to root_path
       false
     end
   end

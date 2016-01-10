@@ -1,0 +1,45 @@
+br
+br
+br
+br
+br
+.container.content
+  .row
+    .col-md-3
+    .col-md-6
+      = form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: 'sky-form2', class: 'sky-form'}) do |f|
+        header Sign In
+        fieldset
+          section
+            .row
+              = f.label :email, class: 'label col col-4'
+              .col.col-8
+                label.input
+                  i.icon-append.fa.fa-user
+                  = f.email_field :email, autofocus: true
+          section
+            .row
+              = f.label :password, class: 'label col col-4'
+              .col.col-8
+                label.input
+                  i.icon-append.fa.fa-lock
+                  = f.password_field :password, autocomplete: 'off'
+                .note
+                  = link_to 'Forgot password?', new_user_password_path
+                  /! <a href="#sky-form2" class="modal-opener">Forgot password?</a
+        /!
+        /!
+          | < % if devise_mapping.rememberable? -%
+        /! <div class="field"
+        /! < %= f.check_box :remember_me %
+        /! < %= f.label :remember_me %
+        /! </div
+        /!
+          | < % end -%
+        /!
+        /! <div class="actions"
+        = f.submit "Log in"
+        /! </div
+      /!
+      /! < % = render "devise/shared/links" %
+    .col-md-3
