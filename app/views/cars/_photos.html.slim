@@ -10,12 +10,11 @@
           theader
             tr.text-left
               th.col-sm-1 Photo
+              th.col-sm-1 Size
               th.col-sm-2 Name
               th.col-sm-3 Caption
-              th.col-sm-1 Orr
               th.col-sm-1 Stage
               th.col-sm-2 File Name
-              th.col-sm-1 Size
               th.col-sm-1 Bin Act Sig
           tbody
             - @car.pics.order('is_signature desc, is_active desc, stage desc, updated_at').each do |p|
@@ -24,12 +23,19 @@
                   = link_to p.photo.url, class: 'fancybox img-hover-v1' do
                     span
                       = image_tag(p.photo.url(:small), class: 'img-responsive')
+
+                td
+
+                  - if p.is_landscape?
+                    i.fi-tablet-landscape.color-green  title='Landscape'
+                  - else
+                    i.fi-tablet-portrait.color-red   title='Portrait'
+                  =< number_to_human_size p.photo_file_size
+
                 td= p.name
                 td= p.caption
-                td= p.is_landscape? ? 'L' : 'P'
                 td= p.stage_text
                 td= p.photo_file_name
-                td= number_to_human_size p.photo_file_size
                 td.text-left
                   => link_to p, data: {:confirm => 'Delete this photo !  . . . Are you sure?'}, :method => :delete, :class => 'btn btn-danger btn-xs hidden-sm', title: 'Delete' do
                     i.fa.fa-trash

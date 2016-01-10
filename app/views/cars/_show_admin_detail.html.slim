@@ -9,9 +9,9 @@
           =< number_to_currency @car.usa_ask, unit: '$', precision: 0
       .panel-body
 
-        = link_to @car.sig_pic_url, class: 'fancybox img-hover-v1' do
+        = link_to get_sig_pic(@car), class: 'fancybox img-hover-v1' do
           span
-            = image_tag(@car.sig_pic_url, class: 'img-responsive')
+            = image_tag(get_sig_pic(@car), class: 'img-responsive')
 
   .col-md-6
     /! Red Panel with Equal Height
@@ -22,8 +22,9 @@
           | Long Description
           small= '     Used in detail views'
       .panel-body
-        h4 Accusamus et iusto odio
-        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+        /h4 Accusamus et iusto odio
+        p class="#{@car.long.present? ? '' : 'color-red'}"
+          = @car.long.present? ? @car.long : 'No short description added yet.'
 
 .row.margin-bottom-20
   .col-md-6
@@ -61,9 +62,9 @@
           b=<> @car.plate
         p
           | Data Dotted on
-          b=<> @car.dot.strftime('%d %b %Y')
+          b=<> date_to_human @car.dot
           | SAPD clearance on
-          b=<> @car.police.strftime('%d %b %Y')
+          b=<> date_to_human @car.police
     /! End Blue Panel
   .col-md-6
     .panel.panel-dark
@@ -73,6 +74,7 @@
           | Short Description
           small= '     Used in carousel views'
       .panel-body
-        h4 Accusamus et iusto odio
-        p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+        /h4 Accusamus et iusto odio
+        p class="#{@car.short.present? ? '' : 'color-red'}"
+          = @car.short.present? ? @car.short : 'No short description added yet.' 
     /! End Turquoise Panel

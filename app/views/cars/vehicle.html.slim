@@ -1,0 +1,68 @@
+br
+br
+br
+br
+
+.breadcrumbs.breadcrumbs-dark
+  .container
+    h1.pull-left.color-green
+      => @vehicle.sell_name
+      small
+        =< "#{@vehicle.year} #{@vehicle.make} #{@vehicle.model}"
+
+/! === End Breadcrumbs ===
+/! About Me Block
+.container.content-sm
+  .row
+    .col-sm-7.shadow-wrapper.md-margin-bottom-40
+      .box-shadow.shadow-effect-3
+        = link_to get_sig_pic(@vehicle), class: 'fancybox img-hover-v1' do
+          span
+            = image_tag(get_sig_pic(@vehicle), class: 'img-responsive')
+    .col-sm-5
+      .overflow-v
+        h3.color-green= @vehicle.year_make_model
+
+        span.color-grey = @vehicle.short
+        table.table.table-bordered
+          thead
+          tbody
+            tr
+              td
+                - if @vehicle.long.present?
+                  = @vehicle.long
+                - else
+                  h2.color-red fix fiX FIX . . . No long description yet !!!
+
+              tr
+                td= simple_format(@vehicle.accessories, class: 'lead')
+
+
+
+.parallax-team.parallaxBg
+  .parallax-team.parallaxBg
+    .content.container
+      .title-v1
+        h2
+          span.color-green Gallery
+
+      .bg-color-dark.owl-carousel-v4
+        .row
+          .news-v2.owl-slider-v4
+            - @vehicle.pics.each do |p|
+              .item
+                .news-v2-badge
+                  = link_to p.photo.url, class: 'fancybox img-hover-v1' do
+                    span
+                      = image_tag(p.photo.url, class: 'img-responsive')
+
+
+javascript:
+  jQuery(document).ready(function () {
+
+    App.initScrollBar();
+    App.initParallaxBg();
+    OwlCarousel.initOwlCarousel();
+    RevolutionSlider.initRSfullWidth();
+  });
+

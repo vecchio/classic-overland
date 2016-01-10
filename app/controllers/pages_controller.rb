@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
 
-  layout :choose_layout
-
   def privacy_policy
   end
 

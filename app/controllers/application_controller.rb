@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :latest_vehicles
 
-  layout :choose_layout
+  # layout :choose_layout
 
   protected
 
@@ -17,11 +17,20 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = 'You must be signed in'
+      redirect_to login_url
+      false
+    end
+  end
+
   def latest_vehicles
     @latest = Car.shipped.limit(3)
   end
 
-  def choose_layout
-    current_user.present? ? 'with_user' : 'without_user'
-  end
+  # def choose_layout
+  #   current_user.present? ? 'with_user' : 'without_user'
+  # end
 end

@@ -1,37 +1,38 @@
 
-.col-md-9
-  = form_for @car, html: { id: 'sky-form', class: 'sky-form' } do |f|
-    header Registration
-    fieldset
-      .row
-        section.col.col-6
-          = f.label :name, class: 'label'
-          = f.label :name, class: 'input'
-            = f.text_field :name, placeholder: 'Our name for it'
-        section.col.col-6
-          = f.label 'Sales Name', class: 'label'
-          = f.label :sell_name, class: 'input'
-            = f.text_field :sell_name, placeholder: 'Sales name for it'
+.col-md-12
+  = form_for @car, html: { id: 'sky-form', class: 'sky-form classic-overland' } do |f|
+    .tab-v1
+      ul.nav.nav-tabs
+        li.active
+          a data-toggle="tab" href="#detail"  Detail
+        li
+          a data-toggle="tab" href="#description"  Description
+        li
+          a data-toggle="tab" href="#history"  History
+        li
+          a data-toggle="tab" href="#photos"  Photos
 
-    fieldset
-      section
-        = f.label :short, class: 'input'
-          = f.text_field :short, placeholder: 'Short description'
-      section
-        = f.label :long, class: 'textarea'
-          = f.text_area :long, placeholder: 'Long description'
+      .tab-content
+        = render 'cars/form_detail', f: f
+        = render 'cars/form_descriptions',  f: f
+        = render 'cars/form_history',  f: f
 
-    fieldset
-      section
-        = f.label 'Photo', class: 'input input-file'
-          .button
-            = f.file_field :photo, onchange: 'this.parentNode.nextSibling.value = this.value'
-            | Browse
-          = text_field_tag '', '', placeholder: 'Include some file', disabled: true
-
-
-
+        .tab-pane.fade#photos
+          = render 'cars/photos'
+          /= render 'cars/photo_add'
 
     footer
-      = f.submit 'Save', class: 'btn-u'
+      => f.button class: 'btn-u' do
+        i.fa.fa-floppy
+        = ' Save'
 
+      =< link_to car_path(@car), :class => 'btn-u btn-u-blue' do
+        i.fa.fa-eye
+        = ' Show'
+
+javascript:
+  jQuery(document).ready(function () {
+    Masking.initMasking();
+    Datepicker.initDatepicker();
+    Validation.initValidation();
+  });

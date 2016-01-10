@@ -1,0 +1,62 @@
+.tab-pane.fade.in.active#detail
+  header
+    /small=  @car.unique
+  fieldset
+    section.col.col-2
+      = f.label 'Number', class: 'label'
+      = f.label :no, class: 'input'
+        = f.text_field :no, placeholder: 'Our Number'
+    section.col.col-5
+      = f.label :name, class: 'label'
+      = f.label :name, class: 'input'
+        = f.text_field :name, placeholder: 'Our name for it'
+    section.col.col-5
+      = f.label 'Sales Name', class: 'label'
+      = f.label :sell_name, class: 'input'
+        = f.text_field :sell_name, placeholder: 'Sales name for it'
+
+    section.col.col-6
+      = f.label :make, class: 'label'
+      = f.label :make, class: 'input'
+        = f.text_field :make, placeholder: 'Vehicle Make'
+    section.col.col-6
+      = f.label :model, class: 'label'
+      = f.label :model, class: 'input'
+        = f.text_field :model, placeholder: 'Vehicle Make'
+
+  fieldset
+    section.col.col-4
+      = f.label :register, class: 'label'
+      = f.label :register, class: 'input'
+        = f.text_field :register, placeholder: 'Vehicle Register'
+    section.col.col-4
+      = f.label :vin, class: 'label'
+      = f.label :vin, class: 'input'
+        = f.text_field :vin, placeholder: 'VIN Number'
+    section.col.col-4
+      = f.label :engine, class: 'label'
+      = f.label :engine, class: 'input'
+        = f.text_field :engine, placeholder: 'Engine Number'
+
+  fieldset
+    section.col.col-3
+      = f.label 'USA Arrive', class: 'label'
+      = f.label :usa_arrive, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :usa_arrive, id: 'date', class: 'datepicker', placeholder: 'USA Arrive Date'
+
+    section.col.col-3
+      = f.label 'US Selling Price', class: 'label'
+      = f.label :usa_ask, class: 'input'
+        = f.text_field :usa_ask, placeholder: 'VIN Number'
+
+    section.col.col-3
+      = f.label 'USA Sold For', class: 'label'
+      = f.label :usa_price, class: 'input'
+        = f.text_field :usa_price, placeholder: 'USA Sold For'
+
+    section.col.col-3
+      = f.label 'USA Arrive', class: 'label'
+      = f.label :usa_sold, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :usa_sold, id: 'date', class: 'datepicker', placeholder: 'USA Sold Date'

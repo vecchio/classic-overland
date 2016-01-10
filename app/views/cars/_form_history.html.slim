@@ -1,0 +1,66 @@
+.tab-pane.fade#history
+  fieldset
+    section.col.col-6
+      = f.label 'Bought From', class: 'label'
+      = f.label :seller, class: 'input'
+        = f.text_field :seller, placeholder: 'Bought From'
+
+    section.col.col-3
+      = f.label 'When', class: 'label'
+      = f.label :bought, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :bought, id: 'date', class: 'datepicker', placeholder: 'Date Purchased'
+
+    section.col.col-3
+      = f.label 'for', class: 'label'
+      = f.label :price, class: 'input'
+        = f.text_field :price, placeholder: 'Purchase price in Rand'
+
+  fieldset
+
+    section.col.col-3
+      = f.label 'Registered', class: 'label'
+      = f.label :enatis, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :enatis, id: 'date', class: 'datepicker', placeholder: 'Date Registered'
+
+    section.col.col-3
+      = f.label 'SA Plate', class: 'label'
+      = f.label :plate, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :plate, id: 'date', class: 'datepicker', placeholder: 'New SA registration umber'
+
+    section.col.col-3
+      = f.label 'Data Dotted', class: 'label'
+      = f.label :dot, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :dot, id: 'date', class: 'datepicker', placeholder: 'Date Data Doted'
+
+    section.col.col-3
+      = f.label 'Police Clearance', class: 'label'
+      = f.label :police, class: 'input'
+        i.icon-append.fa.fa-calendar
+        = f.text_field :police, id: 'date', class: 'datepicker', placeholder: 'Date of police clearance'
+
+  fieldset
+    section.col.col-12
+      = f.label 'Police Comments', class: 'label'
+      = f.label :police_comment, class: 'textarea'
+        = f.text_area :police_comment, placeholder: 'Police clearance notes'
+
+  fieldset
+    section.col.col-4
+      = f.label 'Ship Cost', class: 'label'
+      = f.label :ship_cost, class: 'input'
+        = f.text_field :ship_cost, placeholder: 'Shipping cost'
+
+
+    section.col.col-4
+      = f.label 'Refurbish Cost', class: 'label'
+      = f.label :refurb_cost, class: 'input'
+        = f.text_field :refurb_cost, placeholder: 'Refurbish Cost'
+
+    section.col.col-4
+      = f.label 'Registration Cost', class: 'label'
+      = f.label :enatis_cost, class: 'input'
+        = f.text_field :enatis_cost, placeholder: 'Registration Cost'

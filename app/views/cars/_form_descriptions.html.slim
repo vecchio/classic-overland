@@ -1,0 +1,28 @@
+.tab-pane.fade#description
+  header
+    /small= @car.unique
+  fieldset
+    section.col.col-12
+      = f.label 'Short Description', class: 'label'
+      = f.label :short, class: 'input'
+        = f.text_field :short, placeholder: 'Short description'
+
+    section.col.col-12
+      = f.label 'Long Description', class: 'label'
+      = f.label :long, class: 'textarea'
+        = f.text_area :long, placeholder: 'Long description'
+
+    section.col.col-12
+      = f.label 'Accessories', class: 'label'
+      = f.label :accessories, class: 'textarea'
+        = f.text_area :accessories, placeholder: 'Accessories '
+
+    section.col.col-12
+      = f.label 'Planned Refurb', class: 'label'
+      = f.label :refurb, class: 'textarea'
+        = f.text_area :refurb, placeholder: 'Planned refurb'
+
+    section.col.col-12
+      = f.label 'General Notes', class: 'label'
+      = f.label :notes, class: 'textarea'
+        = f.text_area :notes, placeholder: 'General Notes'

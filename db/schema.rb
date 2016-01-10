@@ -15,36 +15,42 @@ ActiveRecord::Schema.define(version: 20160108144651) do
 
   create_table "cars", force: :cascade do |t|
     t.string   "no",             limit: 255
+    t.string   "unique",         limit: 255
+    t.text     "notes",          limit: 65535
+    t.text     "refurb",         limit: 65535
+    t.text     "accessories",    limit: 65535
     t.integer  "stage",          limit: 4
     t.string   "make",           limit: 255
     t.string   "model",          limit: 255
     t.string   "name",           limit: 255
     t.string   "sell_name",      limit: 255
     t.string   "short",          limit: 255
-    t.string   "long",           limit: 255
+    t.text     "long",           limit: 65535
     t.string   "year",           limit: 255
     t.string   "register",       limit: 255
     t.string   "vin",            limit: 255
     t.string   "engine",         limit: 255
     t.string   "seller",         limit: 255
     t.date     "bought"
-    t.decimal  "price",                      precision: 10
+    t.decimal  "price",                        precision: 10
     t.date     "enatis"
-    t.decimal  "enatis_cost",                precision: 10
+    t.decimal  "enatis_cost",                  precision: 10
     t.string   "plate",          limit: 255
     t.date     "police"
     t.string   "police_comment", limit: 255
     t.date     "dot"
     t.date     "exporter"
-    t.decimal  "ship_cost",                  precision: 10
-    t.decimal  "refurb_cost",                precision: 10
+    t.decimal  "ship_cost",                    precision: 10
+    t.decimal  "refurb_cost",                  precision: 10
     t.date     "usa_arrive"
-    t.decimal  "usa_ask",                    precision: 10
-    t.decimal  "usa_price",                  precision: 10
+    t.decimal  "usa_ask",                      precision: 10
+    t.decimal  "usa_price",                    precision: 10
     t.date     "usa_sold"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
+
+  add_index "cars", ["unique"], name: "index_cars_on_unique", using: :btree
 
   create_table "pics", force: :cascade do |t|
     t.string   "picable_type",       limit: 255

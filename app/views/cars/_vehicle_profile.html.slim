@@ -1,0 +1,25 @@
+/Created form Unifi News Blocks
+
+.item
+  .news-v2-badge
+    = link_to get_sig_pic(v), class: 'fancybox img-hover-v1' do
+      span
+        = image_tag(get_sig_pic(v), class: 'img-responsive')
+    p
+      span = number_to_currency v.usa_ask, unit: '$', delimiter: ' ', precision: 0
+      small = date_to_human v.exporter
+  .news-v2-desc
+    h3
+      span.color-green = v.selling_name
+    small
+      = v.year_make_model
+    p
+      - if v.short.present?
+        = v.short
+      - else
+        h3.color-red fix fiX FIX . . . No short description yet !!!
+
+    p
+      =< link_to vehicle_path(v.unique), :class => 'btn-u btn-u-green' do
+        i.fa.fa-gear
+        = ' More . . .'

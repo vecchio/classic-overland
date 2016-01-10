@@ -18,10 +18,9 @@
             ul.list-unstyled.latest-list
               - @latest.each do |c|
                 li
-                  = link_to c.sell_name, vehicle_path(c), class: 'xxx'
+                  = link_to c.sell_name, vehicle_path(c.unique), class: 'xxx'
                   small= c.exporter.strftime('%B %d, %y')
-        /! End Latest
-        /! Link List
+
         .col-md-3.md-margin-bottom-40
           .headline
             h2 Useful Links
@@ -33,7 +32,7 @@
               = link_to 'What We Do', root_path(anchor: 'what-we-do')
               i.fa.fa-angle-right
             li
-              a href="#"  Vehicles
+              = link_to 'Vehicles', vehicles_path
               i.fa.fa-angle-right
             li
               = link_to 'Terms of Service', terms_of_service_path

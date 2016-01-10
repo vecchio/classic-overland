@@ -6,27 +6,27 @@
           i.fa.fa-plus
           | Add a photo
       .panel-body
-        = form_for @pic, html: {id: 'sky-form', class: 'sky-form'} do |f|
+        = form_for @pic, html: {id: 'sky-form', class: 'sky-form'} do |p|
           fieldset
             section.col.col-6
-              = f.hidden_field :picable_type
-              = f.hidden_field :picable_id
-              = f.label :name, class: 'input'
-                = f.text_field :name, placeholder: 'Name of the photo'
+              = p.hidden_field :picable_type
+              = p.hidden_field :picable_id
+              = p.label :name, class: 'input'
+                = p.text_field :name, placeholder: 'Name of the photo'
             section.col.col-6
-              = f.label :caption, class: 'input'
-                = f.text_field :caption, placeholder: 'Caption for the photo'
+              = p.label :caption, class: 'input'
+                = p.text_field :caption, placeholder: 'Caption for the photo'
 
           fieldset
             section.col.col-6
-              = f.label 'Photo Stage', class: 'label'
-              = f.label :stage, class: 'select'
-                = f.select :stage, options_for_select({ 'After' => 9, 'While' => 5, 'Before' => 1 }, f.object.stage), class: 'form-control'
+              = p.label 'Photo Stage', class: 'label'
+              = p.label :stage, class: 'select'
+                = p.select :stage, options_for_select({ 'After' => 9, 'While' => 5, 'Before' => 1 }, p.object.stage), class: 'form-control'
 
             section.col.col-6
-              = f.label 'Photo Orientation', class: 'label'
-              = f.label :is_landscape, class: 'checkbox'
-                = f.check_box :is_landscape
+              = p.label 'Photo Orientation', class: 'label'
+              = p.label :is_landscape, class: 'checkbox'
+                = p.check_box :is_landscape
                 i
                 | Landscape
 
@@ -34,11 +34,17 @@
 
           fieldset
             section
-              = f.label 'Photo', class: 'input input-file'
+              = p.label 'Photo', class: 'input input-file'
                 .button
-                  = f.file_field :photo, onchange: 'this.parentNode.nextSibling.value = this.value'
-                  | Browse
+                  = p.file_field :photo, onchange: 'this.parentNode.nextSibling.value = this.value'
+                  i.fa.fa-folder-open
+                  = ' Browse'
                 = text_field_tag '', '', placeholder: 'Include some file', disabled: true
 
           footer
-            = f.submit 'Upload', class: 'btn-u'
+            => p.button class: 'btn-u' do
+              i.fa.fa-upload
+              = ' Upload'
+            =< link_to edit_car_path(@car), :class => 'btn-u btn-u-blue' do
+              i.fa.fa-pencil
+              = ' Edit'

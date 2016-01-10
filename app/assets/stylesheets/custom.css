@@ -12,5 +12,43 @@
      text-decoration: underline;
 }
 
+.classic-overland.sky-form fieldset {
+     padding: 5px 20px 5px 20px;
+}
+
+.classic-overland.sky-form  section {
+    margin-bottom: 5px;
+}
+
+.classic-overland.sky-form .input input,
+.classic-overland.sky-form .select select,
+.classic-overland.sky-form .textarea textarea,
+.classic-overland.sky-form .radio i,
+.classic-overland.sky-form .checkbox i,
+.classic-overland.sky-form .toggle i,
+.classic-overland.sky-form .icon-append,
+.classic-overland.sky-form .icon-prepend {
+    border-color: #72c02c;
+}
+
+.sky-form .col-12 {
+    width: 100%;
+}
+
+.classic-overland.sky-form .textarea textarea {
+    resize: vertical;
+}
+
+.classic-overland.sky-form .label {
+    color: #D96038;
+}
+
+.blockquote.bq-text-lg.classic-overland p {
+    font-size: 65%;
+    font-weight: 300;
+    line-height: 40px;
+    text-transform: inherit;
+    color: #777;
+}
 /*section.section-who-we-are,*/
 /*section.section-what-we-do { margin-top: 0px}*/

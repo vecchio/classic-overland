@@ -1,17 +1,11 @@
-
-hr
-hr
-hr
-hr
+br
+br
+br
 
 .container
   .content
     .row
-      h1 Editing car
+      h1 Edit #{@car.name}
 
       == render 'form'
-
-      = link_to 'Show', @car
-      '|
-= link_to 'Back', cars_path
 
