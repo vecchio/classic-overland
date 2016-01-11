@@ -22,7 +22,7 @@ gem 'pundit'
 
 gem 'paperclip', '~> 4.3'
 
-gem 'sprockets', '~> 2.8'
+# gem 'sprockets', '~> 2.8'
 
 group :development do
   gem 'web-console', '~> 2.0'
