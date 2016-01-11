@@ -2,7 +2,7 @@
 server 'classicoverland.com', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/vecchio/classic-overland.git'
-set :application,     'classicoverland'
+set :application,     'classic-overland'
 set :user,            'deployer'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
