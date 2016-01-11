@@ -19,6 +19,10 @@
       - else
         h3.color-red fix fiX FIX . . . No short description yet !!!
 
+    - if v.accessories.present?
+      = simple_format(v.accessories)
+      hr
+
     p
       =< link_to vehicle_path(v.unique), :class => 'btn-u btn-u-green' do
         i.fa.fa-gear
