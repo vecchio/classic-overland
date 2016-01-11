@@ -31,6 +31,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano3-puma'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -39,10 +40,12 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'puma'
+  # gem 'puma'
   # gem 'byebug'
 end
 
-group :production do
-  gem 'unicorn'
-end
+# group :production do
+#   gem 'unicorn'
+# end
+
+gem 'puma'
