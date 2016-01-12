@@ -11,12 +11,10 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require index.css.scss
+ *= require vendor-index
  *= require_tree .
  *= require_self
  */
-
-//@import 'index';
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';

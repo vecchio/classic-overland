@@ -94,3 +94,8 @@ pickle-email-*.html
 /.ruby-gemset.orig
 /.ruby-gemset
 /config/secrets.yml
+
+# symlinked to these files just for ease of teting env stuffcat
+/.bashrc
+/.bash_profile
+/.profile

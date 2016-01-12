@@ -16,5 +16,5 @@
 //= require jquery_ujs
 //= require bootstrap
 
-//= require index.js
+//= require vendor-index
 //= require_tree .
