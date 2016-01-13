@@ -18,7 +18,7 @@
     section.col.col-2
       = f.label 'Stage', class: 'label'
       = f.label :stage, class: 'select'
-        = f.select :stage
+        = f.select :stage, options_for_select({ 'bought' => 0, 'busy refurbishing' => 20, 'waiting to ship' => 30, 'on ship' => 40, 'arrived' => 50, 'cleared' => 60, 'sold' => 90 }, f.object.stage), class: 'form-control'
 
     section.col.col-6
       = f.label :make, class: 'label'
