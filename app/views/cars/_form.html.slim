@@ -1,34 +1,34 @@
-
 .col-md-12
-  = form_for @car, html: { id: 'sky-form', class: 'sky-form classic-overland' } do |f|
-    .tab-v1
-      ul.nav.nav-tabs
-        li.active
-          a data-toggle="tab" href="#detail"  Detail
-        li
-          a data-toggle="tab" href="#description"  Description
-        li
-          a data-toggle="tab" href="#history"  History
-        li
-          a data-toggle="tab" href="#photos"  Photos
+  .profile.profile-body
+    = form_for @car, html: { id: 'sky-form', class: 'sky-form classic-overland' } do |f|
+      .tab-v1
+        ul.nav.nav-tabs
+          li.active
+            a data-toggle="tab" href="#detail"  Detail
+          li
+            a data-toggle="tab" href="#description"  Description
+          li
+            a data-toggle="tab" href="#history"  History
+          li
+            a data-toggle="tab" href="#photos"  Photos
 
-      .tab-content
-        = render 'cars/form_detail', f: f
-        = render 'cars/form_descriptions',  f: f
-        = render 'cars/form_history',  f: f
+        .tab-content
+          = render 'cars/form_detail', f: f
+          = render 'cars/form_descriptions',  f: f
+          = render 'cars/form_history',  f: f
 
-        .tab-pane.fade#photos
-          = render 'cars/photos'
-          /= render 'cars/photo_add'
+          .tab-pane.fade#photos
+            = render 'cars/photos'
+            /= render 'cars/photo_add'
 
-    footer
-      => f.button class: 'btn-u' do
-        i.fa.fa-floppy
-        = ' Save'
+      footer
+        => f.button class: 'btn-u' do
+          i.fa.fa-floppy
+          = ' Save'
 
-      =< link_to car_path(@car), :class => 'btn-u btn-u-blue' do
-        i.fa.fa-eye
-        = ' Show'
+        =< link_to car_path(@car), :class => 'btn-u btn-u-blue' do
+          i.fa.fa-eye
+          = ' Show'
 
 javascript:
   jQuery(document).ready(function () {

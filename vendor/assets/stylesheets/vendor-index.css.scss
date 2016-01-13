@@ -1,15 +1,34 @@
 /*
+
+// -- Global Compulsory
+*= require css/style
+
+// -- Header and Footer
+// Footer 6 in app assets stylesheets
 *= require css/footers/footer-v1
-*= require css/theme-skins/dark
-*= require css/custom
+
+// -- CSS Implementing Plugins
 *= require plugins/animate
 *= require plugins/line-icons/line-icons
 *= require plugins/fancybox/source/jquery.fancybox.css
-*= require plugins/revolution-slider/rs-plugin/css/settings
+*= require plugins/owl-carousel/owl-carousel/owl.carousel.css
+*= plugins/scrollbar/css/jquery.mCustomScrollbar
+// require plugins/revolution-slider/rs-plugin/css/settings
 *= require plugins/sky-forms-pro/skyforms/css/sky-forms.css
 *= require plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css
-*= require plugins/owl-carousel/owl-carousel/owl.carousel.css
+*= require plugins/master-slider/masterslider/style/masterslider
+*= require plugins/master-slider/masterslider/skins/black-2/style.css
 
+//  -- CSS Page Style
+*= require css/pages/page_one.css
+*= require css/pages/profile
+
+// -- CSS Theme
+*= require css/theme-colors/default.css
+*= require css/theme-skins/dark
+
+// -- CSS Customization -->
+*= require css/custom
 
 *= require css/ie8
 *= require css/blocks
@@ -17,6 +36,6 @@
 *= require css/app
 
 
-*= require css/style
+
 */
 

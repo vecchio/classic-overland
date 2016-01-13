@@ -52,3 +52,37 @@
 }
 /*section.section-who-we-are,*/
 /*section.section-what-we-do { margin-top: 0px}*/
+
+/*Slides*/
+.rs-caption-4 {
+    /*color: #fff;*/
+    font-size: 30px;
+    font-weight: 200;
+    padding: 6px 75px;
+    position: relative;
+    /*border-top: solid 1px #fff;*/
+    /*border-bottom: solid 1px #fff;*/
+}
+
+/*.rs-caption-4:after,*/
+/*.rs-caption-4:before {*/
+    /*font-size: 16px;*/
+    /*content: "\f005";*/
+    /*position: absolute;*/
+    /*font-family: FontAwesome;*/
+/*}*/
+
+@media (max-width: 768px) {
+    .rs-caption-1:after,
+    .rs-caption-1:before {
+        content: "";
+    }
+}
+
+/*.rs-caption-1:after {*/
+    /*right: 4%;*/
+/*}*/
+
+/*.rs-caption-1:before {*/
+    /*left: 4%;*/
+/*}*/
