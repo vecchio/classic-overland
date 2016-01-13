@@ -50,12 +50,12 @@
           | Bought from
           b=<> @car.seller
           | on
-          b=<> @car.bought.strftime('%d %b %Y')
+          b=<> @car.bought.strftime('%d %b %Y')  if @car.bought.present?
           | for
           b=<> number_to_currency @car.price, unit: 'R', precision: 0
         p
           | Registered on
-          b=<> @car.enatis.strftime('%d %b %Y')
+          b=<> @car.enatis.strftime('%d %b %Y') if @car.enatis.present?
           | costing
           b=<> number_to_currency @car.enatis_cost, unit: 'R', precision: 0
           | ZA Plate
