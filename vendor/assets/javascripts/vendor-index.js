@@ -26,6 +26,7 @@
 // JS Page Level
 //= require js/app
 //= require js/plugins/master-slider-fw
+//= require js/plugins/revolution-slider.js
 //= require js/plugins/owl-carousel
 //= require js/plugins/fancy-box
 //= require js/plugins/masking

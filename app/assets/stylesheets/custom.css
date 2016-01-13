@@ -55,13 +55,13 @@
 
 /*Slides*/
 .rs-caption-4 {
-    /*color: #fff;*/
+    color: #fff;
     font-size: 30px;
     font-weight: 200;
     padding: 6px 75px;
     position: relative;
-    /*border-top: solid 1px #fff;*/
-    /*border-bottom: solid 1px #fff;*/
+    border-top: solid 1px #fff;
+    border-bottom: solid 1px #fff;
 }
 
 /*.rs-caption-4:after,*/

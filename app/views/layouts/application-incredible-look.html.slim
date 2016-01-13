@@ -23,7 +23,7 @@ html
     == csrf_meta_tags
 
 
-  body.header-fixed#home
+  body.header-fixed.header-fixed-space#home
     .wrapper
       == render 'shared/header_logo_menu'
 
@@ -38,5 +38,4 @@ javascript:
     FancyBox.initFancybox();
     MSfullWidth.initMSfullWidth();
     OwlCarousel.initOwlCarousel();
-    RevolutionSlider.initRSfullScreenOffset();
   });
